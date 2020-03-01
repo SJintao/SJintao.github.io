@@ -313,6 +313,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/lowbit函数x&-x为什么能取出二进制最低位1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏金涛">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jintao Su's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/lowbit函数x&-x为什么能取出二进制最低位1/" class="post-title-link" itemprop="http://yoursite.com/index.html">lowbit函数x&-x为什么能取出二进制最低位1</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-31 20:36:58" itemprop="dateCreated datePublished" datetime="2019-10-31T20:36:58+08:00">2019-10-31</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-01 20:42:27" itemprop="dateModified" datetime="2020-03-01T20:42:27+08:00">2020-03-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机科学/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>树状数组中，我们会用到lowbit函数x&amp;-x来取出一个数字二进制表示中的最低位1，下面来说明它的原理。</p>
+<h2 id="原码反码和补码"><a href="#原码反码和补码" class="headerlink" title="原码反码和补码"></a>原码反码和补码</h2><p>首先来讲原码反码和补码</p>
+<p>1.原码是由符号位(0是正数，1是负数)与二进制组成，比如8位的时候，01000000代表64，11000000代表-64，n位的原码能表示数的范围是$[-2^n-1,2^n-1]$<br>2.正数的时候，反码和原码一样；负数的时候，原码符号位不变，其他位取反就是反码，n位的反码能表示数的范围是$[-2^n-1,2^n-1]$<br>3.正数的时候，补码和原码一样；负数的时候，补码为反码+1，n位的补码能表示数的范围是$[-2^n,2^n-1]$</p>
+<p>在计算机中，运算都是通过补码进行的，我知道的一些好处有：<br>1.补码中0只需要一个编码，所以表示的范围比原码和反码多<br>2.在进行减法运算时，用补码，只需要进行有溢出的加法运算即可</p>
+<h2 id="x-amp-x为什么能取出二进制最低位1"><a href="#x-amp-x为什么能取出二进制最低位1" class="headerlink" title="x&amp;-x为什么能取出二进制最低位1"></a>x&amp;-x为什么能取出二进制最低位1</h2><p>1.当x为0的时候，x&amp;-x会返回0<br>2.当x不为0的时候，假设x为n位补码并且是正数，x的最低位1在位置i(从左往右，符号位为第一位，二进制代表1的位置在第n位)，那么-x的最低位1也在位置i(因为补码二进制位会将原码取反+1，那么位置i+1~n的0会变成1，位置2~i全部取反，位置i的数字变成0，然后在+1，位置i+1~n全变成0，位置i进位成1)，这时候x&amp;-x运算结果就是第i位的1(1~i-1位，x和-x的补码相反；i+1~n位，x和-x的补码全部相反)。反之，当x为负数时也成立。<br>故x&amp;-x能取出x的二进制表示中最低位1</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/调和级数 1+12+13+...+1n 求和公式及证明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -444,182 +620,6 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<script type="math/tex">\approx \ln n</script></p>
 <p>故，上面代码的复杂度为$\sum_{i=1}^{n}\frac{n}{i}​$，即$O(nlogn)​$</p>
 <p>​               </p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/lowbit函数x&-x为什么能取出二进制最低位1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏金涛">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jintao Su's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/lowbit函数x&-x为什么能取出二进制最低位1/" class="post-title-link" itemprop="http://yoursite.com/index.html">lowbit函数x&-x为什么能取出二进制最低位1</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-31 20:36:58" itemprop="dateCreated datePublished" datetime="2019-10-31T20:36:58+08:00">2019-10-31</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-03-01 20:42:27" itemprop="dateModified" datetime="2020-03-01T20:42:27+08:00">2020-03-01</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/计算机科学/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>树状数组中，我们会用到lowbit函数x&amp;-x来取出一个数字二进制表示中的最低位1，下面来说明它的原理。</p>
-<h2 id="原码反码和补码"><a href="#原码反码和补码" class="headerlink" title="原码反码和补码"></a>原码反码和补码</h2><p>首先来讲原码反码和补码</p>
-<p>1.原码是由符号位(0是正数，1是负数)与二进制组成，比如8位的时候，01000000代表64，11000000代表-64，n位的原码能表示数的范围是$[-2^n-1,2^n-1]$<br>2.正数的时候，反码和原码一样；负数的时候，原码符号位不变，其他位取反就是反码，n位的反码能表示数的范围是$[-2^n-1,2^n-1]$<br>3.正数的时候，补码和原码一样；负数的时候，补码为反码+1，n位的补码能表示数的范围是$[-2^n,2^n-1]$</p>
-<p>在计算机中，运算都是通过补码进行的，我知道的一些好处有：<br>1.补码中0只需要一个编码，所以表示的范围比原码和反码多<br>2.在进行减法运算时，用补码，只需要进行有溢出的加法运算即可</p>
-<h2 id="x-amp-x为什么能取出二进制最低位1"><a href="#x-amp-x为什么能取出二进制最低位1" class="headerlink" title="x&amp;-x为什么能取出二进制最低位1"></a>x&amp;-x为什么能取出二进制最低位1</h2><p>1.当x为0的时候，x&amp;-x会返回0<br>2.当x不为0的时候，假设x为n位补码并且是正数，x的最低位1在位置i(从左往右，符号位为第一位，二进制代表1的位置在第n位)，那么-x的最低位1也在位置i(因为补码二进制位会将原码取反+1，那么位置i+1~n的0会变成1，位置2~i全部取反，位置i的数字变成0，然后在+1，位置i+1~n全变成0，位置i进位成1)，这时候x&amp;-x运算结果就是第i位的1(1~i-1位，x和-x的补码相反；i+1~n位，x和-x的补码全部相反)。反之，当x为负数时也成立。<br>故x&amp;-x能取出x的二进制表示中最低位1</p>
 
           
         
